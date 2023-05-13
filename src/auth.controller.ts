@@ -13,6 +13,7 @@ export class AuthController {
 
   @MessagePattern('get-user')
   async getUser(@Payload() message : {id:number}) {
+    console.log('...')
     try {
       const user = await this.authService.getUser(message.id)
       return {...user}

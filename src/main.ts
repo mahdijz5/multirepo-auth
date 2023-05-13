@@ -11,7 +11,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService); 
   const sharedService = app.get(SharedService);
 
-  const customer = configService.get('KAFKA_AUTH_CUSTOMER');
+  const customer ="auth_queue"
 
   app.connectMicroservice(sharedService.getRmqOptions(customer));
   app.startAllMicroservices();
